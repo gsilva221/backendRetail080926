@@ -1,14 +1,17 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Django Menu</title>
+    <link rel="stylesheet" href="{% static 'CSS/menuestilo.css' %}">
 </head>
 <body>
     <h1>Menú Principal</h1>
     
-    <img src='https://cdn.hashnode.com/res/hashnode/image/upload/v1636780048014/niLN2J80j.png' width=200 heigth=100 />
+    <img src='{% static "images/gif/tierra.gif" %}' width=200 height=100 />
 
     <ul>
         <li><a href="informacion">Información</a></li>

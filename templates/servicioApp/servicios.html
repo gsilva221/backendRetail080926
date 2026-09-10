@@ -1,25 +1,32 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ServiciosApp</title>
+    <link rel="stylesheet" href='{% static "css/servicios.css" %}'>
 </head>
 <body>
-    <h1>Servicios</h1>
-    <ul>
-        {% for servicio in servicios %}
-            <li>
-                <br>
-                <ul>
-                    {% for clave, valor in servicio.items %}
-                        <li><strong>{{ clave }}:</strong> {{ valor }}</li>
-                    {% endfor %}
-                </ul>
-                <br>
-            </li>
-        {% endfor %}
-    </ul>
-    <a href="/">Volver al menú</a>
+    <header class="header"> 
+        <h1>Servicios</h1>
+        <img src='{% static "images/static/images.jpg" %}' class="header-img" alt="Logo" />
+    </header>
+        <div class="servicios-container">
+            {% for servicio in servicios %}
+                <div class="servicio-card">
+                    <ul class="servicio-detalles">
+                        {% for clave, valor in servicio.items %}
+                            <li>
+                                <span class="detalle-clave">{{ clave }}</span>
+                                <span class="detalle-valor">{{ valor }}</span>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endfor %}
+        </div>
+
+<a href="/" class="btn-volver">Volver al menú</a>
 </body>
 </html>

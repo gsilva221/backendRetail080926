@@ -16,6 +16,9 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 #Creamos la variable TEMPLATES_DIR para almacenar la ruta de la carpeta templates
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
+#variable para almacenar la ruta de la carpeta static
+STATIC_URL = 'static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
