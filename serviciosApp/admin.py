@@ -1,3 +1,18 @@
 from django.contrib import admin
-
+from .models import Servicio, PrecioServcio
 # Register your models here.
+
+@admin.register(Servicio)
+class ServicioAdmin(admin.ModelAdmin):
+    list_display = ('id','nombre', 'descripcion', 'disponibilidad')
+    search_fields = ('nombre')
+    list_filter = ('disponibilidad',)
+    ordering = ('id',)
+
+
+@admin.register(PrecioServcio)
+class PrecioServcioAdmin(admin.ModelAdmin):
+    list_display = ('id','servicio', 'precio', 'decuento', 'moneda', 'observacion')
+    search_fields = ('servicio__nombre',)
+    list_filter = ('moneda',)
+    ordering = ('id',)    
